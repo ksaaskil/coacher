@@ -25,6 +25,18 @@ Start Tilt:
 tilt up
 ```
 
+Once the stack is up, make a test request:
+
+```bash
+curl http://localhost:8000/reminders/debug
+```
+
+With the returned task ID, request the async result:
+
+```bash
+curl http://localhost:8000/reminders/debug/<TASK_ID>
+```
+
 ## TO DO
 
 - [] Setup Celery
