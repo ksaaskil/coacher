@@ -37,11 +37,17 @@ With the returned task ID, request the async result:
 curl http://localhost:8000/reminders/debug/<TASK_ID>
 ```
 
+Clean-up:
+
+```bash
+tilt down --delete-namespaces
+```
+
 ## TO DO
 
 - [x] Setup Celery
 - [] Setup GitHub workflows
-- [] Setup first example notificaiton
+- [] Setup first example reminder
 
 ## Resources
 
