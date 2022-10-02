@@ -39,7 +39,7 @@ curl http://localhost:8000/reminders/debug/<TASK_ID>
 
 ## TO DO
 
-- [] Setup Celery
+- [x] Setup Celery
 - [] Setup GitHub workflows
 - [] Setup first example notificaiton
 

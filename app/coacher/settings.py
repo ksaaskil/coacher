@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "coacher.reminders",
     "status.apps.StatusConfig",
     "django.contrib.admin",
     "django.contrib.auth",
