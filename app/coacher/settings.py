@@ -121,3 +121,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
 
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+# Celery
+CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL", "rabbitmq")
+CELERY_RESULT_BACKEND = os.environ.get("CELERY_RESULT_BACKEND", "")
+CELERY_SECRET_KEY = os.environ.get("CELERY_SECRET_KEY", "")

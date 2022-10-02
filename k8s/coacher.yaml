@@ -36,6 +36,12 @@ spec:
                 secretKeyRef:
                   name: postgres-credentials
                   key: password
+            - name: CELERY_BROKER_URL
+              value: "amqp://admin:secretpassword@rabbitmq.rabbitmq:5672"
+            - name: CELERY_RESULT_BACKEND
+              value: "db+postgresql://postgres:super-secret@postgres-service:5432/coacher"
+            - name: CELERY_SECRET_KEY
+              value: "secret-key"
           envFrom:
             - configMapRef:
                 name: postgres-configuration
@@ -46,13 +52,12 @@ spec:
       initContainers:
         - name: init-coacher-container
           image: busybox:1.28
-          # Ugly hack to wait for fixed time before starting Django
           command: ["sh", "-c", "echo Sleeping... && sleep 1 && echo Done."]
 ---
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: coacher-migrations
+  name: coacher-migration-job
 spec:
   backoffLimit: 10
   template:

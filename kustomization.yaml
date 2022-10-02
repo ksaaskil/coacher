@@ -1,3 +1,5 @@
 resources:
-  - k8s/coacher.yaml
+  - k8s/rabbitmq.yaml
   - k8s/postgres.yaml
+  - k8s/coacher.yaml
+  - k8s/celery.yaml

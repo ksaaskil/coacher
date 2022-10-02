@@ -6,8 +6,8 @@ metadata:
   labels:
     app: postgres
 data:
-  POSTGRES_DB: "django-db"
-  POSTGRES_USER: "postgres-user"
+  POSTGRES_DB: "coacher"
+  POSTGRES_USER: "postgres"
 ---
 apiVersion: v1
 kind: Secret
@@ -15,7 +15,7 @@ metadata:
   name: postgres-credentials
 type: Opaque
 data:
-  # TODO This should not be in version control in real deployments
+  # super-secret
   password: c3VwZXItc2VjcmV0
 ---
 apiVersion: v1
